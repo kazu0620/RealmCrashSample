@@ -22,14 +22,19 @@
 }
 
 - (void)crashTest {
+    // RLMObjectを新規作成
     Person *person = [Person new];
     RLMRealm *realm    = [RLMRealm defaultRealm];
+    
+    // RLMObjectを保存
     [realm transactionWithBlock:^{
         [realm addObject:person];
     }];
-    
+   
+    // ManagedなRLMObjectを取得
     Person *managedPerson = [Person allObjects].firstObject;
     NSLog(@"MANAGED PERSON %@", managedPerson);
+    // managedPersonがdeacllocされるタイミングで必ずクラッシュする
 }
 
 - (void)didReceiveMemoryWarning {
