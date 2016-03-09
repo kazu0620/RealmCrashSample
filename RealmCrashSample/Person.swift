@@ -14,7 +14,7 @@ class Person: RLMObject{
     }
 }
 
-@objc protocol Animal {
+protocol Animal {
 }
 
 class Dog:Animal {
