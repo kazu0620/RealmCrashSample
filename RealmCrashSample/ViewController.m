@@ -34,7 +34,7 @@
     // ManagedなRLMObjectを取得
     Person *managedPerson = [Person allObjects].firstObject;
     NSLog(@"MANAGED PERSON %@", managedPerson);
-    // managedPersonがdeacllocされるタイミングで必ずクラッシュする
+    // managedPersonがdeallocされるタイミングで必ずクラッシュする
 }
 
 - (void)didReceiveMemoryWarning {
